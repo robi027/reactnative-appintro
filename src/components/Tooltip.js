@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 import Button from "./Button";
 
-import styles from "./style";
+import styles from "../config/style";
 
 type Props = {
   isFirstStep: boolean,
@@ -25,7 +25,6 @@ const Tooltip = ({
   labels,
   currentStep,
 }: Props) => {
-  console.log(currentStep.target.props.content);
   return (
     <View>
       <View style={styles.tooltipContainer}>

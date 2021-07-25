@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+//@flow
+import React, { Component, useEffect } from "react";
 import {
   Button,
   TouchableOpacity,
   View,
   Text,
   SafeAreaView,
+  StatusBar,
 } from "react-native";
 import { copilot, CopilotStep, walkthroughable } from "react-native-copilot";
-import Tooltip from "./Tooltip";
+import Tooltip from "../components/Tooltip";
 const CopilotView = walkthroughable(View);
 const CopilotTouchableOpacity = walkthroughable(TouchableOpacity);
-const Home = (props) => {
+const HomeScreen = (props) => {
   useEffect(() => {
     props.start();
   }, []);
@@ -29,7 +31,7 @@ const Home = (props) => {
         >
           <CopilotView>
             <View>
-              <Button title="Submit" />
+              <Button title="Submit" onPress={() => {}} />
             </View>
           </CopilotView>
         </CopilotStep>
@@ -70,6 +72,5 @@ const Home = (props) => {
 export default copilot({
   tooltipComponent: Tooltip,
   stepNumberComponent: (props) => <View />,
-})(Home);
-
-// tooltipComponent: (props) => <CopilotTooltip {...props} />,
+  androidStatusBarVisible: true,
+})(HomeScreen);

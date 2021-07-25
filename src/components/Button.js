@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-import styles from './style';
+import styles from '../config/style';
 
 type Props = {
   wrapperStyle: Object | number | Array,
