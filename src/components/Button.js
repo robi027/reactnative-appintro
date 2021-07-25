@@ -1,19 +1,38 @@
-// @flow
-import React from 'react';
-import { View, Text } from 'react-native';
-
-import styles from '../config/style';
-
+//@flow
+import * as React from "react";
+import { TouchableOpacity, Text } from "react-native";
+import colors from "../config/colors";
 type Props = {
-  wrapperStyle: Object | number | Array,
-  style: Object | number | Array,
-  rest: Object | number | Array,
+  onPress?: () => void,
+  title: string,
+  color?: string,
+  fontWeight?: "normal" | "bold",
+  padding?: number,
+  width?: number | "100%",
 };
 
-const Button = ({ wrapperStyle, style, ...rest }: Props) => (
-  <View style={[styles.button, wrapperStyle]}>
-    <Text style={[styles.buttonText, style]} {...rest} />
-  </View>
-);
+const Button = ({
+  onPress,
+  color = colors.PRIMARY,
+  fontWeight = "normal",
+  padding = 4,
+  title = "",
+  width,
+}: Props): React.Node => {
+  return (
+    <TouchableOpacity onPress={onPress} style={{ width: width }}>
+      <Text
+        style={{
+          color: color,
+          fontWeight: fontWeight,
+          padding: padding,
+          textAlign: "center",
+        }}
+      >
+        {title}
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 export default Button;
