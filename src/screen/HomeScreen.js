@@ -16,8 +16,6 @@ import Spacer from "../components/Spacer";
 
 const CopilotView = walkthroughable(View);
 const CopilotTouchableOpacity = walkthroughable(TouchableOpacity);
-
-const listener = (props) => {};
 type Props = {
   start: () => void,
 };
@@ -50,9 +48,7 @@ const HomeScreen = (props: Props) => {
           }
         >
           <CopilotView>
-            <View>
-              <Button title="Submit" onPress={() => {}} width={"100%"} />
-            </View>
+            <Button title="Submit" onPress={() => {}} width={"100%"} />
           </CopilotView>
         </CopilotStep>
 
@@ -105,20 +101,18 @@ const HomeScreen = (props: Props) => {
             }
           >
             <CopilotTouchableOpacity>
-              <TouchableOpacity>
-                <View
-                  style={{
-                    height: 75,
-                    width: 75,
-                    borderRadius: 75 / 2,
-                    backgroundColor: "red",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text>Robi</Text>
-                </View>
-              </TouchableOpacity>
+              <View
+                style={{
+                  height: 75,
+                  width: 75,
+                  borderRadius: 75 / 2,
+                  backgroundColor: "red",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text>Robi</Text>
+              </View>
             </CopilotTouchableOpacity>
           </CopilotStep>
         </View>
